@@ -16,6 +16,10 @@
 		52D3A68521D6F6F60051061A /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3A68421D6F6F60051061A /* LoginResponse.swift */; };
 		52D3A68721D6F7990051061A /* UdacityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3A68621D6F7990051061A /* UdacityResponse.swift */; };
 		52D3A68921D6F7C10051061A /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3A68821D6F7C10051061A /* LoginRequest.swift */; };
+		52D3A68B21D7D1BD0051061A /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3A68A21D7D1BD0051061A /* StudentModel.swift */; };
+		52D3A68D21D7FB940051061A /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3A68C21D7FB940051061A /* StudentListViewController.swift */; };
+		52D3A68F21D806D70051061A /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3A68E21D806D70051061A /* StudentInformation.swift */; };
+		52D3A69121D807700051061A /* StudentResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3A69021D807700051061A /* StudentResults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,10 @@
 		52D3A68421D6F6F60051061A /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		52D3A68621D6F7990051061A /* UdacityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityResponse.swift; sourceTree = "<group>"; };
 		52D3A68821D6F7C10051061A /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		52D3A68A21D7D1BD0051061A /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
+		52D3A68C21D7FB940051061A /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
+		52D3A68E21D806D70051061A /* StudentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
+		52D3A69021D807700051061A /* StudentResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentResults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				52986D6721CB09E10043CD96 /* LoginViewController.swift */,
+				52D3A68C21D7FB940051061A /* StudentListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -156,6 +165,7 @@
 		52D3A68221D697FA0051061A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				52D3A68A21D7D1BD0051061A /* StudentModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -163,6 +173,8 @@
 		52D3A68321D698140051061A /* OnTheMap Responses */ = {
 			isa = PBXGroup;
 			children = (
+				52D3A68E21D806D70051061A /* StudentInformation.swift */,
+				52D3A69021D807700051061A /* StudentResults.swift */,
 				52D3A68421D6F6F60051061A /* LoginResponse.swift */,
 				52D3A68621D6F7990051061A /* UdacityResponse.swift */,
 			);
@@ -270,11 +282,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D3A68D21D7FB940051061A /* StudentListViewController.swift in Sources */,
+				52D3A68B21D7D1BD0051061A /* StudentModel.swift in Sources */,
 				52986D6821CB09E10043CD96 /* LoginViewController.swift in Sources */,
 				52986D6621CB09E10043CD96 /* AppDelegate.swift in Sources */,
 				52D3A68721D6F7990051061A /* UdacityResponse.swift in Sources */,
 				52D3A68921D6F7C10051061A /* LoginRequest.swift in Sources */,
 				52D3A68521D6F6F60051061A /* LoginResponse.swift in Sources */,
+				52D3A68F21D806D70051061A /* StudentInformation.swift in Sources */,
+				52D3A69121D807700051061A /* StudentResults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
