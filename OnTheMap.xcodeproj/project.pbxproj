@@ -13,6 +13,9 @@
 		52986D6D21CB09E20043CD96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52986D6C21CB09E20043CD96 /* Assets.xcassets */; };
 		52986D7021CB09E20043CD96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52986D6E21CB09E20043CD96 /* LaunchScreen.storyboard */; };
 		52986D7B21CB09E20043CD96 /* OnTheMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52986D7A21CB09E20043CD96 /* OnTheMapTests.swift */; };
+		52D3A68521D6F6F60051061A /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3A68421D6F6F60051061A /* LoginResponse.swift */; };
+		52D3A68721D6F7990051061A /* UdacityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3A68621D6F7990051061A /* UdacityResponse.swift */; };
+		52D3A68921D6F7C10051061A /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3A68821D6F7C10051061A /* LoginRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		52986D7621CB09E20043CD96 /* OnTheMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnTheMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52986D7A21CB09E20043CD96 /* OnTheMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapTests.swift; sourceTree = "<group>"; };
 		52986D7C21CB09E20043CD96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = OnTheMapTests/Info.plist; sourceTree = SOURCE_ROOT; };
+		52D3A68421D6F6F60051061A /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		52D3A68621D6F7990051061A /* UdacityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityResponse.swift; sourceTree = "<group>"; };
+		52D3A68821D6F7C10051061A /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,10 @@
 		5297FC3E21D5537C007F098B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52D3A68221D697FA0051061A /* Data */,
+				52D3A68021D579D40051061A /* OnTheMap Client */,
+				52D3A68121D57A0A0051061A /* OnTheMap Requests */,
+				52D3A68321D698140051061A /* OnTheMap Responses */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,6 +136,37 @@
 				52986D7A21CB09E20043CD96 /* OnTheMapTests.swift */,
 			);
 			path = OnTheMapTests;
+			sourceTree = "<group>";
+		};
+		52D3A68021D579D40051061A /* OnTheMap Client */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "OnTheMap Client";
+			sourceTree = "<group>";
+		};
+		52D3A68121D57A0A0051061A /* OnTheMap Requests */ = {
+			isa = PBXGroup;
+			children = (
+				52D3A68821D6F7C10051061A /* LoginRequest.swift */,
+			);
+			path = "OnTheMap Requests";
+			sourceTree = "<group>";
+		};
+		52D3A68221D697FA0051061A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		52D3A68321D698140051061A /* OnTheMap Responses */ = {
+			isa = PBXGroup;
+			children = (
+				52D3A68421D6F6F60051061A /* LoginResponse.swift */,
+				52D3A68621D6F7990051061A /* UdacityResponse.swift */,
+			);
+			path = "OnTheMap Responses";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +272,9 @@
 			files = (
 				52986D6821CB09E10043CD96 /* LoginViewController.swift in Sources */,
 				52986D6621CB09E10043CD96 /* AppDelegate.swift in Sources */,
+				52D3A68721D6F7990051061A /* UdacityResponse.swift in Sources */,
+				52D3A68921D6F7C10051061A /* LoginRequest.swift in Sources */,
+				52D3A68521D6F6F60051061A /* LoginResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
