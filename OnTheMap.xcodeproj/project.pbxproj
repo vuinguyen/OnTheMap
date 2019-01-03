@@ -20,6 +20,8 @@
 		52D3A68D21D7FB940051061A /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3A68C21D7FB940051061A /* StudentListViewController.swift */; };
 		52D3A68F21D806D70051061A /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3A68E21D806D70051061A /* StudentInformation.swift */; };
 		52D3A69121D807700051061A /* StudentResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3A69021D807700051061A /* StudentResults.swift */; };
+		52D3A69321D832E60051061A /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3A69221D832E60051061A /* UdacityClient.swift */; };
+		52D5E08421DEC483007E4338 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D5E08321DEC483007E4338 /* APIKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		52D3A68C21D7FB940051061A /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
 		52D3A68E21D806D70051061A /* StudentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
 		52D3A69021D807700051061A /* StudentResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentResults.swift; sourceTree = "<group>"; };
+		52D3A69221D832E60051061A /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
+		52D5E08321DEC483007E4338 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 				52D3A68021D579D40051061A /* OnTheMap Client */,
 				52D3A68121D57A0A0051061A /* OnTheMap Requests */,
 				52D3A68321D698140051061A /* OnTheMap Responses */,
+				52D5E08321DEC483007E4338 /* APIKeys.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 		52D3A68021D579D40051061A /* OnTheMap Client */ = {
 			isa = PBXGroup;
 			children = (
+				52D3A69221D832E60051061A /* UdacityClient.swift */,
 			);
 			path = "OnTheMap Client";
 			sourceTree = "<group>";
@@ -282,6 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D5E08421DEC483007E4338 /* APIKeys.swift in Sources */,
+				52D3A69321D832E60051061A /* UdacityClient.swift in Sources */,
 				52D3A68D21D7FB940051061A /* StudentListViewController.swift in Sources */,
 				52D3A68B21D7D1BD0051061A /* StudentModel.swift in Sources */,
 				52986D6821CB09E10043CD96 /* LoginViewController.swift in Sources */,

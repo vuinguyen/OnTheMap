@@ -19,7 +19,7 @@ struct UdacityResponse: Codable {
 }
 
 extension UdacityResponse: LocalizedError {
-  var errorDescription: String? {
+  var debugDescription: String? {
     return statusMessage
   }
 }

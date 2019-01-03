@@ -15,6 +15,26 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var loginButton: UIButton!
   
   @IBAction func loginTapped(_ sender: UIButton) {
+    UdacityClient.login(username: emailTextField.text ?? "", password: passwordTextField.text ?? "") { (success, error) in
+      if success {
+       // UdacityClient.getStudentList(completion: { (success, error) in
+        //  if success {
+              self.performSegue(withIdentifier: "completeLogin", sender: nil)
+        //  } else {
+            // some other error printed here
+        //  }
+       // })
+
+      } else {
+        let alert = UIAlertController(title: "Login Error", message: error.debugDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"),
+                                      style: .default, handler: { _ in
+                                        print("There was an error in logging in")
+        }))
+        self.present(alert, animated: true, completion: nil)
+      }
+    }
+    /*
     print("tapped the button")
 
     let urlString = "https://onthemap-api.udacity.com/v1/session"
@@ -66,6 +86,7 @@ class LoginViewController: UIViewController {
       }
     }
     task.resume()
+    */
   }
 
   override func viewDidLoad() {
@@ -73,6 +94,8 @@ class LoginViewController: UIViewController {
     // Do any additional setup after loading the view, typically from a nib.
   }
 
+  func getStudentData() {
 
+  }
 }
 
