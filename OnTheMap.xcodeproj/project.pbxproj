@@ -23,6 +23,7 @@
 		52D3A69321D832E60051061A /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3A69221D832E60051061A /* UdacityClient.swift */; };
 		52D5E08421DEC483007E4338 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D5E08321DEC483007E4338 /* APIKeys.swift */; };
 		52D5E08821DF0467007E4338 /* StudentMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D5E08721DF0467007E4338 /* StudentMapViewController.swift */; };
+		52D5E08A21DFDEC9007E4338 /* InformationPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D5E08921DFDEC9007E4338 /* InformationPostingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		52D3A69221D832E60051061A /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
 		52D5E08321DEC483007E4338 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		52D5E08721DF0467007E4338 /* StudentMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMapViewController.swift; sourceTree = "<group>"; };
+		52D5E08921DFDEC9007E4338 /* InformationPostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPostingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				52986D6721CB09E10043CD96 /* LoginViewController.swift */,
 				52D3A68C21D7FB940051061A /* StudentListViewController.swift */,
 				52D5E08721DF0467007E4338 /* StudentMapViewController.swift */,
+				52D5E08921DFDEC9007E4338 /* InformationPostingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				52D5E08821DF0467007E4338 /* StudentMapViewController.swift in Sources */,
 				52D3A69321D832E60051061A /* UdacityClient.swift in Sources */,
 				52D3A68D21D7FB940051061A /* StudentListViewController.swift in Sources */,
+				52D5E08A21DFDEC9007E4338 /* InformationPostingViewController.swift in Sources */,
 				52D3A68B21D7D1BD0051061A /* StudentModel.swift in Sources */,
 				52986D6821CB09E10043CD96 /* LoginViewController.swift in Sources */,
 				52986D6621CB09E10043CD96 /* AppDelegate.swift in Sources */,

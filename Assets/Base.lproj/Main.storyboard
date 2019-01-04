@@ -85,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="211.59420289855075" y="98.641304347826093"/>
         </scene>
-        <!--Student List View Controller-->
+        <!--On The Map-->
         <scene sceneID="Wnb-Yu-zd5">
             <objects>
                 <viewController id="osF-F5-M2Z" customClass="StudentListViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
@@ -137,7 +137,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TN4-Ck-kgc"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6wF-FE-T7h"/>
+                    <navigationItem key="navigationItem" title="On The Map" id="RsG-ce-Oes">
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="nyA-5V-Bfz"/>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="LQ6-3T-z9G">
+                                <connections>
+                                    <segue destination="vUo-9n-Bb8" kind="presentation" id="zj6-W8-fWE"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="gTt-D6-9na"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Lgd-Ij-pii" id="kTm-cX-paj"/>
                     </connections>
@@ -146,7 +156,76 @@
             </objects>
             <point key="canvasLocation" x="2876.811594202899" y="427.98913043478262"/>
         </scene>
-        <!--Student Map View Controller-->
+        <!--Add Location-->
+        <scene sceneID="5mF-1S-gCZ">
+            <objects>
+                <viewController id="MFu-H4-Ki5" customClass="InformationPostingViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YaV-lI-DX5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UmT-Id-vL8">
+                                <rect key="frame" x="16" y="300" width="382" height="136"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nrh-mP-njk">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="gUB-kh-8hV"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Link" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fzP-oC-hxw">
+                                        <rect key="frame" x="0.0" y="52" width="382" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="BIk-wT-rLT"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5d-fm-B2Y">
+                                        <rect key="frame" x="0.0" y="104" width="382" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="C8s-9s-LBo"/>
+                                        </constraints>
+                                        <state key="normal" title="Find Location"/>
+                                        <connections>
+                                            <action selector="findLocation:" destination="MFu-H4-Ki5" eventType="touchUpInside" id="ZfI-GK-4aa"/>
+                                            <action selector="loginTapped:" destination="j3S-6R-qIg" eventType="touchUpInside" id="Vnj-Wl-X60"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Udacity" translatesAutoresizingMaskIntoConstraints="NO" id="FB4-tx-r0g">
+                                <rect key="frame" x="127" y="90" width="160" height="160"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3296877191" green="0.78190354740000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="UmT-Id-vL8" firstAttribute="centerX" secondItem="YaV-lI-DX5" secondAttribute="centerX" id="BX8-zy-mrQ"/>
+                            <constraint firstItem="FB4-tx-r0g" firstAttribute="centerX" secondItem="YaV-lI-DX5" secondAttribute="centerX" id="C8v-b3-iIP"/>
+                            <constraint firstItem="UmT-Id-vL8" firstAttribute="top" secondItem="FB4-tx-r0g" secondAttribute="bottom" constant="50" id="IhB-UA-rHp"/>
+                            <constraint firstItem="UmT-Id-vL8" firstAttribute="leading" secondItem="MGM-Bw-PQ1" secondAttribute="leading" constant="16" id="NGK-O5-KqP"/>
+                            <constraint firstItem="UmT-Id-vL8" firstAttribute="centerY" secondItem="YaV-lI-DX5" secondAttribute="centerY" id="bog-cv-7Mz"/>
+                            <constraint firstItem="MGM-Bw-PQ1" firstAttribute="trailing" secondItem="UmT-Id-vL8" secondAttribute="trailing" constant="16" id="f5x-px-r1v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MGM-Bw-PQ1"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Location" id="BB1-Uv-LAJ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="XXu-RM-9dy"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="linkTextField" destination="fzP-oC-hxw" id="OEP-zM-yvM"/>
+                        <outlet property="locationTextField" destination="nrh-mP-njk" id="CPd-PZ-Fb6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4R-x6-13s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4617.391304347826" y="44.836956521739133"/>
+        </scene>
+        <!--On The Map-->
         <scene sceneID="CjC-00-Fq1">
             <objects>
                 <viewController id="vyA-yP-9gm" customClass="StudentMapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
@@ -170,7 +249,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KG4-rh-Ab6"/>
                     </view>
-                    <navigationItem key="navigationItem" id="GEQ-oV-IDx"/>
+                    <navigationItem key="navigationItem" title="On The Map" id="0B4-SS-h6D">
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="Olt-cL-ANL"/>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="CtT-Md-dX7">
+                                <connections>
+                                    <segue destination="vUo-9n-Bb8" kind="presentation" id="NPG-Cb-mOQ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="lgd-pd-XdH"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="ZhQ-Ma-7dv" id="VM0-BH-dK8"/>
                     </connections>
@@ -235,9 +324,30 @@
             </objects>
             <point key="canvasLocation" x="1969.5652173913045" y="-230.70652173913047"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="od7-C0-EbI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vUo-9n-Bb8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HRS-Bk-75E">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MFu-H4-Ki5" kind="relationship" relationship="rootViewController" id="k6G-bh-VNc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYr-dg-kEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3710.144927536232" y="44.836956521739133"/>
+        </scene>
     </scenes>
     <resources>
         <image name="List" width="400.69564819335938" height="400.69564819335938"/>
         <image name="Udacity" width="160" height="160"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="zj6-W8-fWE"/>
+    </inferredMetricsTieBreakers>
 </document>
