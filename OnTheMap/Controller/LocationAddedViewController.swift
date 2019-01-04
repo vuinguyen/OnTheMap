@@ -54,6 +54,7 @@ class LocationAddedViewController: UIViewController, MKMapViewDelegate {
     // Finally we place the annotation in an array of annotations.
     annotations.append(annotation)
     self.mapView.addAnnotations(annotations)
+    self.mapView.centerCoordinate = coordinate
   }
 
 
