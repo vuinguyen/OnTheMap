@@ -16,8 +16,9 @@ class StudentListViewController: UIViewController {
     override func viewDidLoad() {
       super.viewDidLoad()
 
-     // tableView.reloadData()
+      tableView.reloadData()
 
+      /*
         // Do any additional setup after loading the view.
       var request = URLRequest(url: URL(string: "https://parse.udacity.com/parse/classes/StudentLocation?limit=100&order=-updatedAt")!)
       //request.addValue("clearlyTheWrongApplicationId", forHTTPHeaderField: "X-Parse-Application-Id")
@@ -64,7 +65,7 @@ class StudentListViewController: UIViewController {
 
       }
       task.resume()
-
+*/
   }
     
 

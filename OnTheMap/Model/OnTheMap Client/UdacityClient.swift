@@ -106,12 +106,14 @@ class UdacityClient {
             completion(false, errorResponse)
           }
         } catch {
-          print("cannot get error response from GET")
           print(String(data: data, encoding: .utf8)!)
+          print("cannot get error response from GET")
         }
 
       }
 
     }
-    task.resume()  }
+    task.resume()
+
+  }
 }

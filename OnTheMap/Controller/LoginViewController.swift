@@ -17,13 +17,14 @@ class LoginViewController: UIViewController {
   @IBAction func loginTapped(_ sender: UIButton) {
     UdacityClient.login(username: emailTextField.text ?? "", password: passwordTextField.text ?? "") { (success, error) in
       if success {
-       // UdacityClient.getStudentList(completion: { (success, error) in
-        //  if success {
+        UdacityClient.getStudentList(completion: { (success, error) in
+          if success {
               self.performSegue(withIdentifier: "completeLogin", sender: nil)
-        //  } else {
+          } else {
             // some other error printed here
-        //  }
-       // })
+            print("some error in getting student list")
+          }
+        })
 
       } else {
         let alert = UIAlertController(title: "Login Error", message: error.debugDescription, preferredStyle: .alert)
