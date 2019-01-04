@@ -146,17 +146,34 @@
             </objects>
             <point key="canvasLocation" x="2876.811594202899" y="427.98913043478262"/>
         </scene>
-        <!--View Controller-->
+        <!--Student Map View Controller-->
         <scene sceneID="CjC-00-Fq1">
             <objects>
-                <viewController id="vyA-yP-9gm" sceneMemberID="viewController">
+                <viewController id="vyA-yP-9gm" customClass="StudentMapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KMw-n1-klJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZhQ-Ma-7dv">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vyA-yP-9gm" id="0A1-gf-nv9"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZhQ-Ma-7dv" firstAttribute="top" secondItem="KG4-rh-Ab6" secondAttribute="top" id="TCe-c4-uAo"/>
+                            <constraint firstItem="ZhQ-Ma-7dv" firstAttribute="leading" secondItem="KG4-rh-Ab6" secondAttribute="leading" id="YhP-hU-XEM"/>
+                            <constraint firstItem="KG4-rh-Ab6" firstAttribute="bottom" secondItem="ZhQ-Ma-7dv" secondAttribute="bottom" id="ciJ-al-dxw"/>
+                            <constraint firstItem="KG4-rh-Ab6" firstAttribute="trailing" secondItem="ZhQ-Ma-7dv" secondAttribute="trailing" id="j0m-EZ-WJR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KG4-rh-Ab6"/>
                     </view>
                     <navigationItem key="navigationItem" id="GEQ-oV-IDx"/>
+                    <connections>
+                        <outlet property="mapView" destination="ZhQ-Ma-7dv" id="VM0-BH-dK8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BB-rF-DWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
