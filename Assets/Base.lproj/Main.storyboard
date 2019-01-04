@@ -183,7 +183,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5d-fm-B2Y">
                                         <rect key="frame" x="0.0" y="104" width="382" height="32"/>
@@ -214,16 +214,54 @@
                         <viewLayoutGuide key="safeArea" id="MGM-Bw-PQ1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" id="BB1-Uv-LAJ">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="XXu-RM-9dy"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="XXu-RM-9dy">
+                            <connections>
+                                <action selector="cancelAddLocation:" destination="MFu-H4-Ki5" id="7Bc-N3-DVe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="linkTextField" destination="fzP-oC-hxw" id="OEP-zM-yvM"/>
                         <outlet property="locationTextField" destination="nrh-mP-njk" id="CPd-PZ-Fb6"/>
+                        <segue destination="08e-oe-2hj" kind="show" identifier="displayLocation" id="0ug-Rf-89c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4R-x6-13s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4617.391304347826" y="44.836956521739133"/>
+        </scene>
+        <!--Add Location-->
+        <scene sceneID="WSt-ek-O4d">
+            <objects>
+                <viewController storyboardIdentifier="LocationAddedViewController" id="08e-oe-2hj" customClass="LocationAddedViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lgb-VW-GVe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XIh-Zk-aGN">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <connections>
+                                    <outlet property="delegate" destination="08e-oe-2hj" id="Mbi-73-DVQ"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XIh-Zk-aGN" firstAttribute="top" secondItem="dJS-pK-oeP" secondAttribute="top" id="9zh-0q-daf"/>
+                            <constraint firstItem="XIh-Zk-aGN" firstAttribute="leading" secondItem="dJS-pK-oeP" secondAttribute="leading" id="KLV-a2-Pfp"/>
+                            <constraint firstItem="dJS-pK-oeP" firstAttribute="bottom" secondItem="XIh-Zk-aGN" secondAttribute="bottom" id="Urt-tS-zmm"/>
+                            <constraint firstItem="dJS-pK-oeP" firstAttribute="trailing" secondItem="XIh-Zk-aGN" secondAttribute="trailing" id="rPg-mt-Azl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dJS-pK-oeP"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Location" id="LT7-8q-8a1"/>
+                    <connections>
+                        <outlet property="mapView" destination="XIh-Zk-aGN" id="M0o-Kh-Qrh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s9Y-st-ibO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5442" y="46"/>
         </scene>
         <!--On The Map-->
         <scene sceneID="CjC-00-Fq1">

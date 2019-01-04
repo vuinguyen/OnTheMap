@@ -7,14 +7,49 @@
 //
 
 import UIKit
+import MapKit
 
 class InformationPostingViewController: UIViewController {
 
   @IBOutlet weak var locationTextField: UITextField!
   @IBOutlet weak var linkTextField: UITextField!
 
+  @IBAction func cancelAddLocation(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
+  }
   @IBAction func findLocation(_ sender: Any) {
     print("find location, yo!!")
+    guard let location = locationTextField.text else {
+      return
+    }
+
+    let geocoder = CLGeocoder()
+    geocoder.geocodeAddressString(location) { (locations, error) in
+      guard let locations = locations else {
+        print("didn't geocode correctly")
+        print(error.debugDescription)
+        return
+      }
+
+      guard let latitude = locations[0].location?.coordinate.latitude else {
+        return
+      }
+      print("latitude is \(latitude)")
+
+      guard let longitude = locations[0].location?.coordinate.longitude else {
+        return
+      }
+      print("longitude is \(longitude)")
+
+      //self.performSegue(withIdentifier: "displayLocation", sender: nil)
+
+      let locationController = self.storyboard!.instantiateViewController(withIdentifier: "LocationAddedViewController") as! LocationAddedViewController
+      locationController.latitude = latitude
+      locationController.longitude = longitude
+      locationController.mediaURL = self.linkTextField.text ?? nil
+      self.navigationController!.pushViewController(locationController, animated: true)
+    }
+
   }
 
   override func viewDidLoad() {
