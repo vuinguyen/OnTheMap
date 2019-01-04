@@ -244,13 +244,26 @@
                                     <outlet property="delegate" destination="08e-oe-2hj" id="Mbi-73-DVQ"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svK-IK-xLi">
+                                <rect key="frame" x="20" y="631" width="374" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="lEz-aI-IkV"/>
+                                </constraints>
+                                <state key="normal" title="Finish"/>
+                                <connections>
+                                    <action selector="submitLocationToServer:" destination="08e-oe-2hj" eventType="touchUpInside" id="nf6-BN-c4p"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XIh-Zk-aGN" firstAttribute="top" secondItem="dJS-pK-oeP" secondAttribute="top" id="9zh-0q-daf"/>
                             <constraint firstItem="XIh-Zk-aGN" firstAttribute="leading" secondItem="dJS-pK-oeP" secondAttribute="leading" id="KLV-a2-Pfp"/>
+                            <constraint firstItem="dJS-pK-oeP" firstAttribute="bottom" secondItem="svK-IK-xLi" secondAttribute="bottom" constant="60" id="PSZ-CM-U4F"/>
                             <constraint firstItem="dJS-pK-oeP" firstAttribute="bottom" secondItem="XIh-Zk-aGN" secondAttribute="bottom" id="Urt-tS-zmm"/>
+                            <constraint firstItem="dJS-pK-oeP" firstAttribute="trailing" secondItem="svK-IK-xLi" secondAttribute="trailing" constant="20" id="efY-hU-gsa"/>
                             <constraint firstItem="dJS-pK-oeP" firstAttribute="trailing" secondItem="XIh-Zk-aGN" secondAttribute="trailing" id="rPg-mt-Azl"/>
+                            <constraint firstItem="svK-IK-xLi" firstAttribute="leading" secondItem="dJS-pK-oeP" secondAttribute="leading" constant="20" id="rtb-6m-QLS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dJS-pK-oeP"/>
                     </view>
