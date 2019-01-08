@@ -138,7 +138,11 @@
                         <viewLayoutGuide key="safeArea" id="TN4-Ck-kgc"/>
                     </view>
                     <navigationItem key="navigationItem" title="On The Map" id="RsG-ce-Oes">
-                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="nyA-5V-Bfz"/>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="nyA-5V-Bfz">
+                            <connections>
+                                <action selector="logout:" destination="osF-F5-M2Z" id="NL0-4m-L6H"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="LQ6-3T-z9G">
                                 <connections>
@@ -301,7 +305,11 @@
                         <viewLayoutGuide key="safeArea" id="KG4-rh-Ab6"/>
                     </view>
                     <navigationItem key="navigationItem" title="On The Map" id="0B4-SS-h6D">
-                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="Olt-cL-ANL"/>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="Olt-cL-ANL">
+                            <connections>
+                                <action selector="logout:" destination="vyA-yP-9gm" id="GH2-Ik-doM"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="CtT-Md-dX7">
                                 <connections>

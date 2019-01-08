@@ -11,6 +11,16 @@ import UIKit
 class StudentListViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
 
+  @IBAction func logout(_ sender: Any) {
+    UdacityClient.logout { (success, error) in
+      if success {
+        self.dismiss(animated: true, completion: nil)
+      } else {
+        print("there was an error with logging out")
+      }
+    }
+  }
+  
   let reuseIdentifier = "StudentListCell"
 
     override func viewDidLoad() {

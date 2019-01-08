@@ -13,6 +13,16 @@ class StudentMapViewController: UIViewController, MKMapViewDelegate {
 
   @IBOutlet weak var mapView: MKMapView!
   
+  @IBAction func logout(_ sender: Any) {
+    UdacityClient.logout { (success, error) in
+      if success {
+        self.dismiss(animated: true, completion: nil)
+      } else {
+        print("there was an error with logging out")
+      }
+    }
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
 
