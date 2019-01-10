@@ -23,9 +23,23 @@ class StudentMapViewController: UIViewController, MKMapViewDelegate {
     }
   }
   
+  @IBAction func refreshData(_ sender: Any) {
+    UdacityClient.getStudentList { (success, error) in
+      if success {
+        self.populateMap()
+      } else {
+        print("refresh data failed")
+      }
+    }
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    populateMap()
+  }
+
+  func populateMap() {
     // The "locations" array is an array of dictionary objects that are similar to the JSON
     // data that you can download from parse.
     //let locations = hardCodedLocationData()
@@ -75,7 +89,6 @@ class StudentMapViewController: UIViewController, MKMapViewDelegate {
 
     // When the array is complete, we add the annotations to the map.
     self.mapView.addAnnotations(annotations)
-
   }
 
   // MARK: - MKMapViewDelegate

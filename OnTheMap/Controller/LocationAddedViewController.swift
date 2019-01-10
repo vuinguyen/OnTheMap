@@ -13,6 +13,8 @@ class LocationAddedViewController: UIViewController, MKMapViewDelegate {
 
   @IBOutlet weak var mapView: MKMapView!
   @IBAction func submitLocationToServer(_ sender: Any) {
+
+    
     dismiss(animated: true, completion: nil)
   }
 

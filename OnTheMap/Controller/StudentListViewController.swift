@@ -20,7 +20,16 @@ class StudentListViewController: UIViewController {
       }
     }
   }
-  
+  @IBAction func refreshData(_ sender: Any) {
+    UdacityClient.getStudentList { (success, error) in
+      if success {
+        self.tableView.reloadData()
+      } else {
+        print("refresh data failed")
+      }
+    }
+  }
+
   let reuseIdentifier = "StudentListCell"
 
     override func viewDidLoad() {

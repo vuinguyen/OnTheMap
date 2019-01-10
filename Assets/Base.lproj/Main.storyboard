@@ -149,7 +149,11 @@
                                     <segue destination="vUo-9n-Bb8" kind="presentation" id="zj6-W8-fWE"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="refresh" id="gTt-D6-9na"/>
+                            <barButtonItem systemItem="refresh" id="gTt-D6-9na">
+                                <connections>
+                                    <action selector="refreshData:" destination="osF-F5-M2Z" id="sDE-gA-MzY"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -316,7 +320,11 @@
                                     <segue destination="vUo-9n-Bb8" kind="presentation" id="NPG-Cb-mOQ"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="refresh" id="lgd-pd-XdH"/>
+                            <barButtonItem systemItem="refresh" id="lgd-pd-XdH">
+                                <connections>
+                                    <action selector="refreshData:" destination="vyA-yP-9gm" id="ykm-7u-CsM"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -407,6 +415,6 @@
         <image name="Udacity" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zj6-W8-fWE"/>
+        <segue reference="NPG-Cb-mOQ"/>
     </inferredMetricsTieBreakers>
 </document>
