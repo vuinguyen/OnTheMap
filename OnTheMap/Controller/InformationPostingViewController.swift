@@ -47,6 +47,7 @@ class InformationPostingViewController: UIViewController {
       locationController.latitude = latitude
       locationController.longitude = longitude
       locationController.mediaURL = self.linkTextField.text ?? nil
+      locationController.mapString = self.locationTextField.text ?? nil
       self.navigationController!.pushViewController(locationController, animated: true)
     }
 

@@ -146,4 +146,34 @@ class UdacityClient {
     task.resume()
 
   }
+
+  class func addStudent(student: StudentInformation, completion: @escaping (Bool, Error?) -> Void) {
+    var request = URLRequest(url: URL(string: "https://parse.udacity.com/parse/classes/StudentLocation")!)
+    request.httpMethod = "POST"
+    request.addValue(APIKeys.ApplicationID, forHTTPHeaderField: "X-Parse-Application-Id")
+    request.addValue(APIKeys.RESTAPIKey, forHTTPHeaderField: "X-Parse-REST-API-Key")
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    //request.httpBody = "{\"uniqueKey\": \"1234\", \"firstName\": \"John\", \"lastName\": \"Doe\",\"mapString\": \"Mountain View, CA\", \"mediaURL\": \"https://udacity.com\",\"latitude\": 37.386052, \"longitude\": -122.083851}".data(using: .utf8)
+    do {
+      request.httpBody = try JSONEncoder().encode(student)
+    } catch {
+      print("error encoding JSON")
+    }
+    let session = URLSession.shared
+    let task = session.dataTask(with: request) { data, response, error in
+      if error != nil { // Handle error…
+        print("there was an error in adding a student")
+        DispatchQueue.main.async {
+          completion(false, error)
+        }
+        return
+      }
+
+      DispatchQueue.main.async {
+        completion(true, nil)
+      }
+      print(String(data: data!, encoding: .utf8)!)
+    }
+    task.resume()
+  }
 }

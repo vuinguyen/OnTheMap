@@ -36,7 +36,68 @@ class StudentMapViewController: UIViewController, MKMapViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    populateMap()
+    //populateMap()
+
+    // The "locations" array is an array of dictionary objects that are similar to the JSON
+    // data that you can download from parse.
+    //let locations = hardCodedLocationData()
+    let locations = StudentModel.studentList
+
+    // We will create an MKPointAnnotation for each dictionary in "locations". The
+    // point annotations will be stored in this array, and then provided to the map view.
+    var annotations = [MKPointAnnotation]()
+
+    // The "locations" array is loaded with the sample data below. We are using the dictionaries
+    // to create map annotations. This would be more stylish if the dictionaries were being
+    // used to create custom structs. Perhaps StudentLocation structs.
+
+    //self.mapView.removeAnnotations(self.mapView.annotations)
+    for dictionary in locations {
+
+      // Notice that the float values are being used to create CLLocationDegree values.
+      // This is a version of the Double type.
+      guard let latitude = dictionary.latitude, let longitude = dictionary.longitude else {
+        continue
+      }
+      //let lat = CLLocationDegrees(latitude)
+      let lat = CLLocationDegrees(Float(latitude))
+
+      //let lat = CLLocationDegrees(dictionary["latitude"] as! Double)
+
+      //let long = CLLocationDegrees(longitude)
+      let long = CLLocationDegrees(Float(longitude))
+      //let long = CLLocationDegrees(dictionary["longitude"] as! Double)
+
+      // The lat and long are used to create a CLLocationCoordinates2D instance.
+      let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+
+      /*
+       guard let first = dictionary.firstName, let last = dictionary.lastName, let mediaURL = dictionary.mediaURL else {
+       continue
+       }
+       */
+
+      let first = dictionary.firstName ?? ""
+      let last = dictionary.lastName ?? ""
+      let mediaURL = dictionary.mediaURL ?? ""
+
+      //let first = dictionary["firstName"] as! String
+      //let last = dictionary["lastName"] as! String
+      //let mediaURL = dictionary["mediaURL"] as! String
+
+      // Here we create the annotation and set its coordiate, title, and subtitle properties
+      let annotation = MKPointAnnotation()
+      annotation.coordinate = coordinate
+      annotation.title = "\(first) \(last)"
+      annotation.subtitle = mediaURL
+
+      // Finally we place the annotation in an array of annotations.
+      annotations.append(annotation)
+    }
+
+    // When the array is complete, we add the annotations to the map.
+    self.mapView.addAnnotations(annotations)
+
   }
 
   func populateMap() {
@@ -53,6 +114,7 @@ class StudentMapViewController: UIViewController, MKMapViewDelegate {
     // to create map annotations. This would be more stylish if the dictionaries were being
     // used to create custom structs. Perhaps StudentLocation structs.
 
+    //self.mapView.removeAnnotations(self.mapView.annotations)
     for dictionary in locations {
 
       // Notice that the float values are being used to create CLLocationDegree values.
@@ -70,9 +132,16 @@ class StudentMapViewController: UIViewController, MKMapViewDelegate {
       // The lat and long are used to create a CLLocationCoordinates2D instance.
       let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
 
+      /*
       guard let first = dictionary.firstName, let last = dictionary.lastName, let mediaURL = dictionary.mediaURL else {
         continue
       }
+ */
+
+      let first = dictionary.firstName ?? ""
+      let last = dictionary.lastName ?? ""
+      let mediaURL = dictionary.mediaURL ?? ""
+
       //let first = dictionary["firstName"] as! String
       //let last = dictionary["lastName"] as! String
       //let mediaURL = dictionary["mediaURL"] as! String

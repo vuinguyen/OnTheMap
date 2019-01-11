@@ -9,16 +9,16 @@
 import Foundation
 
 struct StudentInformation: Codable {
-  let objectId: String
+  let objectId: String?
   let uniqueKey: String?
   let firstName: String?
   let lastName: String?
   let mapString: String?
   let mediaURL: String?
-  let latitude: Float?
-  let longitude: Float?
-  let createdAt: String
-  let updatedAt: String
+  let latitude: Double?
+  let longitude: Double?
+  let createdAt: String?
+  let updatedAt: String?
 
   enum CodingKeys: String, CodingKey {
     case objectId
@@ -32,4 +32,19 @@ struct StudentInformation: Codable {
     case createdAt
     case updatedAt
   }
+
+
+  init(dictionary: [CodingKeys: Any]) {
+    objectId = dictionary[CodingKeys.objectId] as? String
+    uniqueKey = dictionary[CodingKeys.uniqueKey] as? String
+    firstName = dictionary[CodingKeys.firstName] as? String
+    lastName = dictionary[CodingKeys.lastName] as? String
+    mapString = dictionary[CodingKeys.mapString] as? String
+    mediaURL = dictionary[CodingKeys.mediaURL] as? String
+    latitude = dictionary[CodingKeys.latitude] as? Double
+    longitude = dictionary[CodingKeys.longitude] as? Double
+    createdAt = dictionary[CodingKeys.createdAt] as? String
+    updatedAt = dictionary[CodingKeys.updatedAt] as? String
+  }
+ 
 }
