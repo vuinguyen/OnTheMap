@@ -14,6 +14,12 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var loginButton: UIButton!
   
+  @IBAction func signUpForAccount(_ sender: Any) {
+    let app = UIApplication.shared
+    let toOpen: String = "https://www.udacity.com/account/auth#!/signup"
+    app.open(URL(string: toOpen)!, options: [:], completionHandler: nil)
+  }
+
   @IBAction func loginTapped(_ sender: UIButton) {
     UdacityClient.login(username: emailTextField.text ?? "", password: passwordTextField.text ?? "") { (success, error) in
       if success {
