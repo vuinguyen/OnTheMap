@@ -15,8 +15,9 @@ class LocationAddedViewController: UIViewController, MKMapViewDelegate {
   var longitude: Double?
   var mediaURL: String?
   var mapString: String?
-  var firstName: String? = "Starlight"
-  var lastName: String? = "Starbright"
+  let firstName: String = "Diana"
+  let lastName: String = "Prince"
+  let uniqueKey: String = "1234"
 
   @IBOutlet weak var mapView: MKMapView!
   @IBAction func submitLocationToServer(_ sender: Any) {
@@ -24,9 +25,9 @@ class LocationAddedViewController: UIViewController, MKMapViewDelegate {
 
     //let decoder = JSONDecoder.init()
 
-    let studentDict: [StudentInformation.CodingKeys: Any] = [StudentInformation.CodingKeys.uniqueKey: "1234",
-                                                             StudentInformation.CodingKeys.firstName: firstName ?? "",
-                                                             StudentInformation.CodingKeys.lastName: lastName ?? "",
+    let studentDict: [StudentInformation.CodingKeys: Any] = [StudentInformation.CodingKeys.uniqueKey: uniqueKey,
+                                                             StudentInformation.CodingKeys.firstName: firstName,
+                                                             StudentInformation.CodingKeys.lastName: lastName,
                                                              StudentInformation.CodingKeys.mapString: mapString ?? "",
                                                              StudentInformation.CodingKeys.mediaURL: mediaURL ?? "",
                                                              StudentInformation.CodingKeys.latitude: latitude ?? 0.0,
@@ -72,9 +73,7 @@ class LocationAddedViewController: UIViewController, MKMapViewDelegate {
     // Here we create the annotation and set its coordiate, title, and subtitle properties
     let annotation = MKPointAnnotation()
     annotation.coordinate = coordinate
-    //annotation.title = "\(first) \(last)"
-    annotation.title = "Testing"
-
+    annotation.title = "\(firstName ?? "Testing testing") \(lastName ?? "123...")"
     if let mediaURL = mediaURL {
       annotation.subtitle = mediaURL
     }
@@ -127,7 +126,6 @@ class LocationAddedViewController: UIViewController, MKMapViewDelegate {
     if control == view.rightCalloutAccessoryView {
       let app = UIApplication.shared
       if let toOpen = view.annotation?.subtitle! {
-        //app.openURL(URL(string: toOpen)!)
         app.open(URL(string: toOpen)!, options: [:], completionHandler: nil)
       }
     }

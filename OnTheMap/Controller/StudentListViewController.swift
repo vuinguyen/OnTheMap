@@ -36,55 +36,6 @@ class StudentListViewController: UIViewController {
       super.viewDidLoad()
 
       tableView.reloadData()
-
-      /*
-        // Do any additional setup after loading the view.
-      var request = URLRequest(url: URL(string: "https://parse.udacity.com/parse/classes/StudentLocation?limit=100&order=-updatedAt")!)
-      //request.addValue("clearlyTheWrongApplicationId", forHTTPHeaderField: "X-Parse-Application-Id")
-      //request.addValue("clearlyTheWrongKey", forHTTPHeaderField: "X-Parse-REST-API-Key")
-
-      request.addValue(APIKeys.ApplicationID, forHTTPHeaderField: "X-Parse-Application-Id")
-      request.addValue(APIKeys.RESTAPIKey, forHTTPHeaderField: "X-Parse-REST-API-Key")
-
-      let session = URLSession.shared
-      let task = session.dataTask(with: request) { data, response, error in
-
-      //let task = session.downloadTask(with: request) { (location, response, error) in
-
-       // guard let location = location else {
-        guard let data = data else {
-          print("got no data back from GET")
-          return
-        }
-
-        //let data = try! Data(contentsOf: location)
-
-        let decoder = JSONDecoder()
-        do {
-          let responseObject = try decoder.decode(StudentResults.self, from: data)
-          //print(responseObject)
-          StudentModel.studentList = responseObject.results
-          print(StudentModel.studentList)
-          // print("response is: \(String(describing: response))")
-          DispatchQueue.main.async {
-            self.tableView.reloadData()
-          }
-        } catch {
-          do {
-            let errorResponse = try decoder.decode(UdacityResponse.self, from: data)
-            print(errorResponse.errorDescription ?? "error")
-            let alert = UIAlertController(title: "error", message: errorResponse.errorDescription, preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
-          } catch {
-            print(String(data: data, encoding: .utf8)!)
-            print("cannot get error response from GET")
-          }
-
-        }
-
-      }
-      task.resume()
-*/
   }
     
 
@@ -124,5 +75,18 @@ extension StudentListViewController: UITableViewDataSource, UITableViewDelegate 
     return cell
   }
 
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //selectedIndex = indexPath.row
+    //performSegue(withIdentifier: "showDetail", sender: nil)
 
+    let student = StudentModel.studentList[indexPath.row]
+    let app = UIApplication.shared
+    if let toOpen = student.mediaURL {
+      //app.openURL(URL(string: toOpen)!)
+      app.open(URL(string:toOpen)!, options: [:], completionHandler: nil)
+
+    }
+
+    tableView.deselectRow(at: indexPath, animated: true)
+  }
 }
