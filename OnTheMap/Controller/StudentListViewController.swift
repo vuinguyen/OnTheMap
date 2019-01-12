@@ -76,13 +76,9 @@ extension StudentListViewController: UITableViewDataSource, UITableViewDelegate 
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //selectedIndex = indexPath.row
-    //performSegue(withIdentifier: "showDetail", sender: nil)
-
     let student = StudentModel.studentList[indexPath.row]
     let app = UIApplication.shared
     if let toOpen = student.mediaURL {
-      //app.openURL(URL(string: toOpen)!)
       app.open(URL(string:toOpen)!, options: [:], completionHandler: nil)
 
     }

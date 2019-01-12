@@ -36,8 +36,9 @@ class StudentMapViewController: UIViewController, MKMapViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    //populateMap()
+    populateMap()
 
+    /*
     // The "locations" array is an array of dictionary objects that are similar to the JSON
     // data that you can download from parse.
     //let locations = hardCodedLocationData()
@@ -97,7 +98,7 @@ class StudentMapViewController: UIViewController, MKMapViewDelegate {
 
     // When the array is complete, we add the annotations to the map.
     self.mapView.addAnnotations(annotations)
-
+*/
   }
 
   func populateMap() {
