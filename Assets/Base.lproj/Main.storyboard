@@ -196,52 +196,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UmT-Id-vL8">
-                                <rect key="frame" x="16" y="300" width="382" height="136"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="a1X-ds-mgg">
+                                <rect key="frame" x="20" y="230" width="374" height="276"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nrh-mP-njk">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="32"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Udacity" translatesAutoresizingMaskIntoConstraints="NO" id="FB4-tx-r0g">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="gUB-kh-8hV"/>
+                                            <constraint firstAttribute="height" constant="100" id="Kxx-MN-Off"/>
                                         </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Link" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fzP-oC-hxw">
-                                        <rect key="frame" x="0.0" y="52" width="382" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="BIk-wT-rLT"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5d-fm-B2Y">
-                                        <rect key="frame" x="0.0" y="104" width="382" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="C8s-9s-LBo"/>
-                                        </constraints>
-                                        <state key="normal" title="Find Location"/>
-                                        <connections>
-                                            <action selector="findLocation:" destination="MFu-H4-Ki5" eventType="touchUpInside" id="ZfI-GK-4aa"/>
-                                            <action selector="loginTapped:" destination="j3S-6R-qIg" eventType="touchUpInside" id="Vnj-Wl-X60"/>
-                                        </connections>
-                                    </button>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UmT-Id-vL8" userLabel="Location Stack View">
+                                        <rect key="frame" x="0.0" y="140" width="374" height="136"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nrh-mP-njk">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="gUB-kh-8hV"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Link" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fzP-oC-hxw">
+                                                <rect key="frame" x="0.0" y="52" width="374" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="BIk-wT-rLT"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5d-fm-B2Y">
+                                                <rect key="frame" x="0.0" y="104" width="374" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="C8s-9s-LBo"/>
+                                                </constraints>
+                                                <state key="normal" title="Find Location"/>
+                                                <connections>
+                                                    <action selector="findLocation:" destination="MFu-H4-Ki5" eventType="touchUpInside" id="ZfI-GK-4aa"/>
+                                                    <action selector="loginTapped:" destination="j3S-6R-qIg" eventType="touchUpInside" id="Vnj-Wl-X60"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="UmT-Id-vL8" firstAttribute="centerX" secondItem="a1X-ds-mgg" secondAttribute="centerX" id="W1Z-zi-qa7"/>
+                                    <constraint firstItem="FB4-tx-r0g" firstAttribute="centerX" secondItem="a1X-ds-mgg" secondAttribute="centerX" id="mi2-W0-0JB"/>
+                                </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Udacity" translatesAutoresizingMaskIntoConstraints="NO" id="FB4-tx-r0g">
-                                <rect key="frame" x="127" y="90" width="160" height="160"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.3296877191" green="0.78190354740000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="UmT-Id-vL8" firstAttribute="centerX" secondItem="YaV-lI-DX5" secondAttribute="centerX" id="BX8-zy-mrQ"/>
-                            <constraint firstItem="FB4-tx-r0g" firstAttribute="centerX" secondItem="YaV-lI-DX5" secondAttribute="centerX" id="C8v-b3-iIP"/>
-                            <constraint firstItem="UmT-Id-vL8" firstAttribute="top" secondItem="FB4-tx-r0g" secondAttribute="bottom" constant="50" id="IhB-UA-rHp"/>
-                            <constraint firstItem="UmT-Id-vL8" firstAttribute="leading" secondItem="MGM-Bw-PQ1" secondAttribute="leading" constant="16" id="NGK-O5-KqP"/>
-                            <constraint firstItem="UmT-Id-vL8" firstAttribute="centerY" secondItem="YaV-lI-DX5" secondAttribute="centerY" id="bog-cv-7Mz"/>
-                            <constraint firstItem="MGM-Bw-PQ1" firstAttribute="trailing" secondItem="UmT-Id-vL8" secondAttribute="trailing" constant="16" id="f5x-px-r1v"/>
+                            <constraint firstItem="a1X-ds-mgg" firstAttribute="leading" secondItem="MGM-Bw-PQ1" secondAttribute="leading" constant="20" id="0Rm-9j-xqX"/>
+                            <constraint firstItem="a1X-ds-mgg" firstAttribute="centerY" secondItem="YaV-lI-DX5" secondAttribute="centerY" id="AYA-ll-gdn"/>
+                            <constraint firstItem="MGM-Bw-PQ1" firstAttribute="trailing" secondItem="a1X-ds-mgg" secondAttribute="trailing" constant="20" id="sFP-yg-hEg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MGM-Bw-PQ1"/>
                     </view>
