@@ -50,14 +50,6 @@ class UdacityClient {
           let errorResponse = try decoder.decode(UdacityResponse.self, from: newData)
           print(errorResponse.errorDescription ?? "error")
           DispatchQueue.main.async {
-            /*
-            let alert = UIAlertController(title: "Login Error", message: errorResponse.errorDescription, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"),
-                                          style: .default, handler: { _ in
-                                            print("There was an error in logging in")
-            }))
-            self.present(alert, animated: true, completion: nil)
- */
             completion(false, errorResponse)
           }
         } catch {

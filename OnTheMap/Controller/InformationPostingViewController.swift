@@ -26,10 +26,12 @@ class InformationPostingViewController: UIViewController {
     let geocoder = CLGeocoder()
     geocoder.geocodeAddressString(location) { (locations, error) in
       guard let locations = locations else {
-        print("didn't geocode correctly")
-        print(error.debugDescription)
+        let alert = UIAlertController(title: "Error Geocoding Location", message: error?.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"),
+                                      style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
         return
-      }
+        }
 
       guard let latitude = locations[0].location?.coordinate.latitude else {
         return

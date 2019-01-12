@@ -28,6 +28,7 @@ class LoginViewController: UIViewController {
                                             print("There was an error in getting the student list")
                                             self.performSegue(withIdentifier: "completeLogin", sender: nil)
             }))
+            self.present(alert, animated: true, completion: nil)
           }
         })
       } else {
