@@ -13,6 +13,9 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var loginButton: UIButton!
+  @IBOutlet weak var signUpButton: UIButton!
+  
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
   @IBAction func signUpForAccount(_ sender: Any) {
     let app = UIApplication.shared
@@ -21,9 +24,11 @@ class LoginViewController: UIViewController {
   }
 
   @IBAction func loginTapped(_ sender: UIButton) {
+    setLoggingIn(true)
     UdacityClient.login(username: emailTextField.text ?? "", password: passwordTextField.text ?? "") { (success, error) in
       if success {
         UdacityClient.getStudentList(completion: { (success, error) in
+          self.setLoggingIn(false)
           if success {
               self.performSegue(withIdentifier: "completeLogin", sender: nil)
           } else {
@@ -51,6 +56,18 @@ class LoginViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+  }
+
+  func setLoggingIn(_ loggingIn: Bool) {
+    if loggingIn {
+      activityIndicator.startAnimating()
+    } else {
+      activityIndicator.stopAnimating()
+    }
+    emailTextField.isEnabled = !loggingIn
+    passwordTextField.isEnabled = !loggingIn
+    loginButton.isEnabled = !loggingIn
+    signUpButton.isEnabled = !loggingIn
   }
 }
 
