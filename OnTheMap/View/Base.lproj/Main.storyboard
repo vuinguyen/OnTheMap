@@ -224,7 +224,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Link" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fzP-oC-hxw">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fzP-oC-hxw">
                                                 <rect key="frame" x="0.0" y="52" width="374" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="BIk-wT-rLT"/>
@@ -458,7 +458,7 @@
     </scenes>
     <resources>
         <image name="List" width="400.69564819335938" height="400.69564819335938"/>
-        <image name="Map" width="36" height="36"/>
+        <image name="Map" width="108" height="108"/>
         <image name="Udacity" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>

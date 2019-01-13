@@ -33,21 +33,22 @@ class LoginViewController: UIViewController {
               self.performSegue(withIdentifier: "completeLogin", sender: nil)
           } else {
             // we should display an alert here and segue to the next view
+            print("There was an error in getting the student list")
+
             let alert = UIAlertController(title: "Error Retrieving Data", message: error.debugDescription, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"),
                                           style: .default, handler: { _ in
-                                            print("There was an error in getting the student list")
                                             self.performSegue(withIdentifier: "completeLogin", sender: nil)
             }))
+
             self.present(alert, animated: true, completion: nil)
           }
         })
       } else {
+        print("There was an error in logging in")
         let alert = UIAlertController(title: "Login Error", message: error.debugDescription, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"),
-                                      style: .default, handler: { _ in
-                                        print("There was an error in logging in")
-        }))
+                                      style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
       }
     }

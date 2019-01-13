@@ -12,8 +12,6 @@ import UIKit
 class UdacityClient {
 
   class func login(username: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
-    print("tapped the button")
-
     let urlString = "https://onthemap-api.udacity.com/v1/session"
     let url = URL(string: urlString)
     var request = URLRequest(url: url!)
@@ -28,11 +26,13 @@ class UdacityClient {
 
 
       guard let data = data else {
-        print("got no data back from post")
+        print("got no data back from POST for login")
+        DispatchQueue.main.async {
+          completion(false, error)
+        }
         return
       }
 
-      //let range = Range(5..<data!.count)
       let range = 5..<data.count
       let newData = data.subdata(in: range) /* subset response data! */
       print(String(data: newData, encoding: .utf8)!)
@@ -42,7 +42,6 @@ class UdacityClient {
         let responseObject = try decoder.decode(LoginResponse.self, from: newData)
         print(responseObject)
         DispatchQueue.main.async {
-          //self.performSegue(withIdentifier: "completeLogin", sender: nil)
           completion(true, nil)
         }
       } catch {
@@ -76,8 +75,9 @@ class UdacityClient {
     let task = session.dataTask(with: request) { data, response, error in
 
       if error != nil { // Handle error…
-        print("there was an error here")
-        completion(false, error)
+        DispatchQueue.main.async {
+          completion(false, error)
+        }
         return
       }
 
@@ -93,8 +93,6 @@ class UdacityClient {
 
   class func getStudentList(completion: @escaping (Bool, Error?) -> Void) {
     var request = URLRequest(url: URL(string: "https://parse.udacity.com/parse/classes/StudentLocation?limit=100&order=-updatedAt")!)
-    //request.addValue("clearlyTheWrongApplicationId", forHTTPHeaderField: "X-Parse-Application-Id")
-    //request.addValue("clearlyTheWrongKey", forHTTPHeaderField: "X-Parse-REST-API-Key")
 
     request.addValue(APIKeys.ApplicationID, forHTTPHeaderField: "X-Parse-Application-Id")
     request.addValue(APIKeys.RESTAPIKey, forHTTPHeaderField: "X-Parse-REST-API-Key")
@@ -103,27 +101,25 @@ class UdacityClient {
     let task = session.dataTask(with: request) { data, response, error in
 
       guard let data = data else {
-        print("got no data back from GET")
+        print("got no data back from GET in getStudentList")
+        DispatchQueue.main.async {
+          completion(false, error)
+        }
         return
       }
 
       let decoder = JSONDecoder()
       do {
         let responseObject = try decoder.decode(StudentResults.self, from: data)
-        //print(responseObject)
         StudentModel.studentList = responseObject.results
         print(StudentModel.studentList)
-        // print("response is: \(String(describing: response))")
         DispatchQueue.main.async {
-          //self.tableView.reloadData()
           completion(true, nil)
         }
       } catch {
         do {
           let errorResponse = try decoder.decode(UdacityResponse.self, from: data)
           print(errorResponse.errorDescription ?? "error")
-          //let alert = UIAlertController(title: "error", message: errorResponse.errorDescription, preferredStyle: .alert)
-          //self.present(alert, animated: true, completion: nil)
           DispatchQueue.main.async {
             completion(false, errorResponse)
           }
@@ -145,7 +141,6 @@ class UdacityClient {
     request.addValue(APIKeys.ApplicationID, forHTTPHeaderField: "X-Parse-Application-Id")
     request.addValue(APIKeys.RESTAPIKey, forHTTPHeaderField: "X-Parse-REST-API-Key")
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-    //request.httpBody = "{\"uniqueKey\": \"1234\", \"firstName\": \"John\", \"lastName\": \"Doe\",\"mapString\": \"Mountain View, CA\", \"mediaURL\": \"https://udacity.com\",\"latitude\": 37.386052, \"longitude\": -122.083851}".data(using: .utf8)
     do {
       request.httpBody = try JSONEncoder().encode(student)
     } catch {

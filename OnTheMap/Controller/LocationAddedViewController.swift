@@ -21,10 +21,6 @@ class LocationAddedViewController: UIViewController, MKMapViewDelegate {
 
   @IBOutlet weak var mapView: MKMapView!
   @IBAction func submitLocationToServer(_ sender: Any) {
-   // let studentData = "{\"uniqueKey\": \"1234\", \"firstName\": \(String(describing: firstName)), \"lastName\": \(String(describing: lastName)),\"mapString\": \(String(describing: mapString)), \"mediaURL\": \(String(describing: mediaURL)),\"latitude\": \(latitude ?? 0.0), \"longitude\": \(longitude ?? 0.0)}".data(using: .utf8)
-
-    //let decoder = JSONDecoder.init()
-
     let studentDict: [StudentInformation.CodingKeys: Any] = [StudentInformation.CodingKeys.uniqueKey: uniqueKey,
                                                              StudentInformation.CodingKeys.firstName: firstName,
                                                              StudentInformation.CodingKeys.lastName: lastName,
@@ -32,21 +28,15 @@ class LocationAddedViewController: UIViewController, MKMapViewDelegate {
                                                              StudentInformation.CodingKeys.mediaURL: mediaURL ?? "",
                                                              StudentInformation.CodingKeys.latitude: latitude ?? 0.0,
                                                              StudentInformation.CodingKeys.longitude: longitude ?? 0.0]
-   // do  {
-      //let student = try decoder.decode(StudentInformation.self, from: studentData!)
 
-      let student = StudentInformation(dictionary: studentDict)
-      UdacityClient.addStudent(student: student) { (success, error) in
-        if success {
-          self.dismiss(animated: true, completion: nil)
-        } else {
-          print("there was an error in adding a student")
-        }
+    let student = StudentInformation(dictionary: studentDict)
+    UdacityClient.addStudent(student: student) { (success, error) in
+      if success {
+        self.dismiss(animated: true, completion: nil)
+      } else {
+        print("there was an error in adding a student")
       }
-   // } catch {
-   //   print("error with creating StudentInformation object")
-   //   return
-   // }
+    }
   }
 
   override func viewDidLoad() {

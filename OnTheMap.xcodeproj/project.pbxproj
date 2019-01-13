@@ -95,6 +95,8 @@
 		5297FC3F21D55385007F098B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				52986D6921CB09E10043CD96 /* Main.storyboard */,
+				52986D6E21CB09E20043CD96 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -114,8 +116,6 @@
 		5297FC4121D553C9007F098B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				52986D6921CB09E10043CD96 /* Main.storyboard */,
-				52986D6E21CB09E20043CD96 /* LaunchScreen.storyboard */,
 				52986D6C21CB09E20043CD96 /* Assets.xcassets */,
 			);
 			path = Assets;
