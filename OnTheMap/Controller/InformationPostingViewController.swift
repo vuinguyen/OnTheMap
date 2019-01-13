@@ -13,18 +13,21 @@ class InformationPostingViewController: UIViewController {
 
   @IBOutlet weak var locationTextField: UITextField!
   @IBOutlet weak var linkTextField: UITextField!
-
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+  
   @IBAction func cancelAddLocation(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }
+
   @IBAction func findLocation(_ sender: Any) {
-    print("find location, yo!!")
+    setGeocoding(true)
     guard let location = locationTextField.text else {
       return
     }
 
     let geocoder = CLGeocoder()
     geocoder.geocodeAddressString(location) { (locations, error) in
+      self.setGeocoding(false)
       guard let locations = locations else {
         let alert = UIAlertController(title: "Error Geocoding Location", message: error?.localizedDescription, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"),
@@ -43,8 +46,6 @@ class InformationPostingViewController: UIViewController {
       }
       print("longitude is \(longitude)")
 
-      //self.performSegue(withIdentifier: "displayLocation", sender: nil)
-
       let locationController = self.storyboard!.instantiateViewController(withIdentifier: "LocationAddedViewController") as! LocationAddedViewController
       locationController.latitude = latitude
       locationController.longitude = longitude
@@ -61,15 +62,13 @@ class InformationPostingViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+  func setGeocoding(_ geocoding: Bool) {
+    if geocoding {
+      activityIndicator.startAnimating()
+    } else {
+      activityIndicator.stopAnimating()
     }
-    */
-
+    locationTextField.isEnabled = !geocoding
+    linkTextField.isEnabled = !geocoding
+  }
 }

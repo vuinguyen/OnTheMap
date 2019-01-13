@@ -252,12 +252,17 @@
                                     <constraint firstItem="FB4-tx-r0g" firstAttribute="centerX" secondItem="a1X-ds-mgg" secondAttribute="centerX" id="mi2-W0-0JB"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="W1c-Om-NxW">
+                                <rect key="frame" x="230" y="245" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.3296877191" green="0.78190354740000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="a1X-ds-mgg" firstAttribute="leading" secondItem="MGM-Bw-PQ1" secondAttribute="leading" constant="20" id="0Rm-9j-xqX"/>
                             <constraint firstItem="a1X-ds-mgg" firstAttribute="centerY" secondItem="YaV-lI-DX5" secondAttribute="centerY" id="AYA-ll-gdn"/>
+                            <constraint firstItem="W1c-Om-NxW" firstAttribute="centerX" secondItem="YaV-lI-DX5" secondAttribute="centerX" id="rIP-aY-2kN"/>
                             <constraint firstItem="MGM-Bw-PQ1" firstAttribute="trailing" secondItem="a1X-ds-mgg" secondAttribute="trailing" constant="20" id="sFP-yg-hEg"/>
+                            <constraint firstItem="MGM-Bw-PQ1" firstAttribute="bottom" secondItem="W1c-Om-NxW" secondAttribute="bottom" constant="55" id="xMx-7D-K6L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MGM-Bw-PQ1"/>
                     </view>
@@ -269,6 +274,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="W1c-Om-NxW" id="hiX-X9-8sh"/>
                         <outlet property="linkTextField" destination="fzP-oC-hxw" id="OEP-zM-yvM"/>
                         <outlet property="locationTextField" destination="nrh-mP-njk" id="CPd-PZ-Fb6"/>
                         <segue destination="08e-oe-2hj" kind="show" identifier="displayLocation" id="0ug-Rf-89c"/>
