@@ -35,6 +35,10 @@ class LocationAddedViewController: UIViewController, MKMapViewDelegate {
         self.dismiss(animated: true, completion: nil)
       } else {
         print("there was an error in adding a student")
+        let alert = UIAlertController(title: "Error Adding Location", message: error?.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"),
+                                      style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
       }
     }
   }
@@ -42,7 +46,6 @@ class LocationAddedViewController: UIViewController, MKMapViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    // Do any additional setup after loading the view.
     guard let latitude = latitude, let longitude = longitude else  {
       return
     }
@@ -51,19 +54,13 @@ class LocationAddedViewController: UIViewController, MKMapViewDelegate {
 
     var annotations = [MKPointAnnotation]()
     let lat = CLLocationDegrees(latitude)
-
-    //let lat = CLLocationDegrees(dictionary["latitude"] as! Double)
-
     let long = CLLocationDegrees(longitude)
-    //let long = CLLocationDegrees(dictionary["longitude"] as! Double)
-
-    // The lat and long are used to create a CLLocationCoordinates2D instance.
     let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
 
     // Here we create the annotation and set its coordiate, title, and subtitle properties
     let annotation = MKPointAnnotation()
     annotation.coordinate = coordinate
-    annotation.title = "\(firstName ?? "Testing testing") \(lastName ?? "123...")"
+    annotation.title = "\(firstName ) \(lastName)"
     if let mediaURL = mediaURL {
       annotation.subtitle = mediaURL
     }
@@ -73,17 +70,6 @@ class LocationAddedViewController: UIViewController, MKMapViewDelegate {
     self.mapView.addAnnotations(annotations)
     self.mapView.centerCoordinate = coordinate
   }
-
-
-  /*
-   // MARK: - Navigation
-
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
 
   // MARK: - MKMapViewDelegate
 
@@ -108,7 +94,6 @@ class LocationAddedViewController: UIViewController, MKMapViewDelegate {
 
     return pinView
   }
-
 
   // This delegate method is implemented to respond to taps. It opens the system browser
   // to the URL specified in the annotationViews subtitle property.

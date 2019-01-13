@@ -58,8 +58,6 @@ class InformationPostingViewController: UIViewController {
 
   override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
   func setGeocoding(_ geocoding: Bool) {

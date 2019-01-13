@@ -34,8 +34,7 @@ class LoginViewController: UIViewController {
           } else {
             // we should display an alert here and segue to the next view
             print("There was an error in getting the student list")
-
-            let alert = UIAlertController(title: "Error Retrieving Data", message: error.debugDescription, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error Retrieving Data", message: error?.localizedDescription, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"),
                                           style: .default, handler: { _ in
                                             self.performSegue(withIdentifier: "completeLogin", sender: nil)
@@ -45,8 +44,9 @@ class LoginViewController: UIViewController {
           }
         })
       } else {
+        self.setLoggingIn(false)
         print("There was an error in logging in")
-        let alert = UIAlertController(title: "Login Error", message: error.debugDescription, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Login Error", message: error?.localizedDescription, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"),
                                       style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -56,7 +56,6 @@ class LoginViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
   }
 
   func setLoggingIn(_ loggingIn: Bool) {
