@@ -67,8 +67,12 @@ class LocationAddedViewController: UIViewController, MKMapViewDelegate {
 
     // Finally we place the annotation in an array of annotations.
     annotations.append(annotation)
+
+    // Place the annotations on the map, center map around coordinate, and zoom in.
     self.mapView.addAnnotations(annotations)
     self.mapView.centerCoordinate = coordinate
+    self.mapView.region = MKCoordinateRegion(center: coordinate,
+                                             span: MKCoordinateSpan(latitudeDelta: 0.015, longitudeDelta: 0.015))
   }
 
   // MARK: - MKMapViewDelegate
