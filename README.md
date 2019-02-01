@@ -14,4 +14,5 @@ FTW!
 
 Below are screenshots of the app:
 
-![StudentMap] (/screenshots/StudentMap.png)
+![StudentMap](/screenshots/Login.png)
+![StudentMap](/screenshots/StudentMap.png)
