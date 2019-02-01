@@ -12,7 +12,22 @@ Built for my class project, as part of the Udacity iOS nanodegree program.
 
 FTW!
 
-Below are screenshots of the app:
+Login:
 
-![StudentMap](/screenshots/Login.png)
-![StudentMap](/screenshots/StudentMap.png)
+![Login Screen](/screenshots/Login.png)
+
+Map of Student Locations:
+
+![Student Map](/screenshots/StudentMap.png)
+
+List of Students:
+
+![Student List](/screenshots/StudentList.png)
+
+Add a New Student Location:
+
+![Add student location](/screenshots/AddLocation.png)
+
+Map of Newly Added Student Location:
+
+![Display added location](/screenshots/LocationAdded.png)
