@@ -1,6 +1,6 @@
 # OnTheMap
 
-This app pulls in student data from the Udacity server and displays the data in a tableview and a mapview. 
+This app pulls in student data from the Udacity server and displays the data in a tableview and a mapview.
 
 In order to get it to work, you need to do the following:
 
@@ -11,3 +11,7 @@ In order to get it to work, you need to do the following:
 Built for my class project, as part of the Udacity iOS nanodegree program.
 
 FTW!
+
+Below are screenshots of the app:
+
+![StudentMap] (/screenshots/StudentMap.png)
